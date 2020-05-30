@@ -25,7 +25,7 @@ RUN adduser --disabled-password \
     --home $HOME \
     $USER
 
-COPY environment.yml requirements.txt /tmp/
+COPY environment.yml requirements.txt requirements_dev.txt /tmp/
 RUN chown $UID:$GID /tmp/environment.yml /tmp/requirements.txt
 
 #COPY postBuild /usr/local/bin/postBuild.sh
@@ -39,7 +39,7 @@ RUN chown $UID:$GID /usr/local/bin/entrypoint.sh && \
 USER $USER
 
 # install miniconda
-ENV MINICONDA_VERSION 4.7.12
+ENV MINICONDA_VERSION 4.8.2
 ENV CONDA_DIR $HOME/miniconda3
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-$MINICONDA_VERSION-Linux-x86_64.sh -O ~/miniconda.sh && \
     chmod +x ~/miniconda.sh && \

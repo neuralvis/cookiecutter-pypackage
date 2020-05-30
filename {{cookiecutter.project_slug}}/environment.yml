@@ -6,16 +6,6 @@ channels:
 dependencies:
   - python=3.8.2
   - pip
-  - bump2version
-  - flake8
-  - tox
-  - coverage
-  - Sphinx
-  - Click
-  - pytest
-  - pytest-runner
-  - wheel
-  - twine
-  - watchdog
   - pip:
     - -r file:requirements.txt
+    - -r file:requirements_dev.txt
